@@ -35,7 +35,7 @@ class HistoricalData:
             'securityId': security_id,
             'exchangeSegment': exchange_segment,
             'instrument': instrument_type,
-            'interval': interval,
+            'interval': str(interval),
             'fromDate': from_date,
             'toDate': to_date
         }
