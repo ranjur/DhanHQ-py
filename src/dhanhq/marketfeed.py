@@ -458,7 +458,7 @@ class MarketFeed:
         self.instruments = list(unique_symbols_set)
 
         # If the WebSocket is open, send the subscription packet for the new symbols
-        if self.ws and not self.ws.closed:
+        if self.ws and not self.ws.close:
             # Prepare the instruments list for subscription
             group_size = 100
             new_instrument_list = self.validate_and_process_tuples(symbols, group_size)
@@ -495,7 +495,7 @@ class MarketFeed:
         self.instruments = list(unique_symbols_set)
 
         # If the WebSocket is open, send the unsubscription packet for the symbols
-        if self.ws and not self.ws.closed:
+        if self.ws and not self.ws.close:
             # Prepare the instruments list for unsubscription
             group_size = 100
             instrument_list_to_unsubscribe = self.validate_and_process_tuples(symbols, group_size)
